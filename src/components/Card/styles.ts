@@ -1,32 +1,16 @@
 import styled from 'styled-components'
 
 export const Card = styled.div(({ theme }) => `
-  text-align: center;
+  width: 700px;
+  display: flex;
   border: 1px solid ${theme.gray2};
   box-shadow: ${theme.shadow};
   padding: 20px 10px;
   border-radius: 4px;
-  color: ${theme.black};
   cursor: pointer;
   transition: all 0.2s;
   margin: 10px;
 
-  > svg {
-    font-size: 40pt;
-    border: 1px solid ${theme.white};
-    background: ${theme.primaryBlue};
-    border-radius: 100%;
-    fill: ${theme.white};
-    padding: 12px;
-    margin-bottom: 16px;
-  }
-  > p {
-    font-weight: 500px;
-    font-size: 16px;
-    margin: 18px auto;
-    max-width: 300px;
-  }
-  
   &:hover {
     box-shadow: ${theme.shadow3};
   }
@@ -40,4 +24,34 @@ export const Card = styled.div(({ theme }) => `
     }
   }
   
+`);
+
+export const Image = styled.img`
+  width: 200px;
+`
+
+export const Content = styled.div`
+  max-width: 400px;
+  padding-left: 16px; 
+  
+`
+
+export const Title = styled.h2`
+  font-weight: 500px;
+  font-size: 16px;
+  margin-bottom: 12px;
+`
+
+export const Category = styled.div(({ theme }) => `
+  background: ${theme.primary};
+  color: ${theme.white};
+
+  margin-top: 16px;
+
+  width: max-content;
+  padding: 4px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+
+
 `);

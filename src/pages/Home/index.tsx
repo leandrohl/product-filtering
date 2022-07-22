@@ -27,18 +27,23 @@ const Home: React.FC = () => {
       <S.Title>
         Listagem de produtos
       </S.Title>
-      {
-        products.map(product => {
-          return (
-            <Card
-              key={product.id}
-              title={product.name}
-              action={() => {}}
-              icon={product.name}
-            />
-          )
-        })
-      }
+      <S.Products>
+        {
+          products.map(product => {
+            return (
+              <Card
+                key={product.id}
+                title={product.name}
+                image={product.images[0]}
+                category={product.category}
+                subTitle={product.shortDescription}
+
+              />
+            )
+          })
+        }
+      </S.Products>
+      
     </S.Container>
   );
 }
