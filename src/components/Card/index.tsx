@@ -15,8 +15,7 @@ const Card: React.FC<ICardProps> = (props: ICardProps) =>  {
   const { title, image, action, subTitle, category } = props
   return (
     <S.Card onClick={action}>
-      {/* <img src={image.src} alt={image.alt}/> */}
-      <S.Image>
+      <S.Image src={image.asset.url} alt={image.alt}>
 
       </S.Image>
       <S.Content>

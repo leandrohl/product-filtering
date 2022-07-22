@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Card = styled.div(({ theme }) => `
-  width: 700px;
   display: flex;
+  align-items: center;
+
   border: 1px solid ${theme.gray2};
   box-shadow: ${theme.shadow};
   padding: 20px 10px;
@@ -17,6 +18,7 @@ export const Card = styled.div(({ theme }) => `
 
   @media (max-width: 800px) {
     width: 100%;
+    flex-direction: column;
     padding: 10px;
     font-size: 16px;
     > p {
@@ -28,6 +30,7 @@ export const Card = styled.div(({ theme }) => `
 
 export const Image = styled.img`
   width: 200px;
+  object-fit: cover;
 `
 
 export const Content = styled.div`

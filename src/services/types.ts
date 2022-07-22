@@ -7,11 +7,13 @@ export interface IProduct {
 }
 
 export interface ICategory {
-  id: string;
-  name: string;
+  _id: string;
+  name?: string;
 }
 
 export interface IImage {
   alt: string;
-  src: string;
+  asset: {
+    url: string;
+  };
 }
