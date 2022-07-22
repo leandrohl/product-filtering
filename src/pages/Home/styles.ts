@@ -2,30 +2,40 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   display: flex;
-  flex-direction: column;
   width: 100%;
 
   padding: 28px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const Filter = styled.nav`
   margin-bottom: 16px;
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 15%;
 
-  margin: 0 16px;
+  > h2 {
+    font-weight: 600;
+    color: ${props => props.theme.primary}
+  }
 
   > form {
-    display: flex;
-    padding: 0 16px;
-    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
   }
 `
 
 export const Products = styled.section`
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 85%;
   flex-wrap: wrap;
 `

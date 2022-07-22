@@ -7,15 +7,15 @@ interface ICheckBoxProps extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 const Checkbox: React.FC<ICheckBoxProps> = (props: ICheckBoxProps) => {
-  const { label, id, checked, onChange } = props
+  const { label, name, checked, onChange } = props
   return <S.Container>
     <input 
       type='checkbox'  
-      name={id}
+      name={name}
       checked={checked}
       onChange={onChange}
     /> 
-    <label>{label}</label>
+    <span>{label}</span>
   </S.Container>;
 }
 

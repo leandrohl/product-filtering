@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const Card = styled.div(({ theme }) => `
+export const Card = styled.section(({ theme }) => `
   display: flex;
   align-items: center;
+  
 
   border: 1px solid ${theme.gray2};
   box-shadow: ${theme.shadow};
@@ -34,7 +35,7 @@ export const Image = styled.img`
 `
 
 export const Content = styled.div`
-  max-width: 400px;
+  max-width: 260px;
   padding-left: 16px; 
   
 `

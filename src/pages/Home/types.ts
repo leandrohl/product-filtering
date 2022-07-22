@@ -1,6 +1,9 @@
 import { ICategory } from "../../services/types";
 
-export interface ICategoryFilter extends ICategory{
-  selected: boolean;
+export class IFilter{
+   category: string[] = [];
+}
 
+export interface Category extends ICategory{
+  selected: boolean
 }

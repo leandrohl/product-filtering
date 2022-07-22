@@ -16,7 +16,6 @@ const Card: React.FC<ICardProps> = (props: ICardProps) =>  {
   return (
     <S.Card onClick={action}>
       <S.Image src={image.asset.url} alt={image.alt}>
-
       </S.Image>
       <S.Content>
         <S.Title>{title}</S.Title>

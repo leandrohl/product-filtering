@@ -1,72 +1,79 @@
-import React, { ChangeEventHandler, SyntheticEvent, useEffect, useState } from 'react';
-import Button from '../../components/Button';
+import React, { useEffect, useState } from 'react';
 import Card from '../../components/Card';
 import Checkbox from '../../components/Checkbox';
 import data from '../../services/products.json'
-import { ICategory, IProduct } from '../../services/types';
+import { IProduct } from '../../services/types';
 
 import * as S from './styles';
-import { ICategoryFilter } from './types';
+import { Category } from './types';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<IProduct[]>([])
-  const [categories, setCategories] = useState<ICategoryFilter[]>([])
-  // const [categoriesSelected, setCategoriesSelected] = useState<ICategoryFilter[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
     searchProducts()
+    searchCategories()
   }, [])
 
-  useEffect(() => {
-    console.log(categories)
-  }, [categories])
-
-
-  const searchProducts = () => {
+  const searchCategories = () => {
     const response: IProduct[] = data.data.nodes
     if (response) {
-      setProducts(response)
+      const categoriesData = response.map(product => product.category)
 
-      const categories = response.map(product => product.category)
-
-      const categoriesFilter = Array.from(new Set(categories.map(c => c._id)))
+      const categoriesFilter: Category[] = Array.from(new Set(categoriesData.map(c => c._id)))
         .map(id => { 
           return {
             _id: id,
-            name: categories.find(c => c._id === id )?.name,
+            name: categoriesData.find(c => c._id === id )?.name,
             selected: false
           }
         })
-
       setCategories(categoriesFilter)
     }
   }
 
-  const handleChangeCheckBox =  (event: ChangeEventHandler<HTMLInputElement>) => {
-    console.log(event)
-    // setCategories([
-    //   ...categories,
-    //   [name]: ve
-    // ])
+  const searchProducts = (filter?: Category[]) => {
+    const response: IProduct[] = data.data.nodes
+    if (response) {
+      let productsData: IProduct[] = response
+
+      if (filter && filter.find(category => category.selected)) {
+        productsData = response.filter(product => filter.find(c => c.selected && c._id === product.category._id))
+      }
+
+      setProducts(productsData)
+    }
+  }
+
+  const handleCheckBoxChange = (position: number) => {
+    const updatedCategories = categories.map((category, index) => {
+        if (index === position) category.selected = !category.selected
+        return category
+      }
+    );
+
+    searchProducts(updatedCategories)
+    setCategories(updatedCategories);
   }
 
 
   return (
     <S.Container>
       <S.Filter>
-
+        <h2> Categorias </h2>
         <form>
-          { categories.map(category => 
+          { categories.map((category, index) => 
               <Checkbox 
                 key={category._id}
-                id={category._id}
+                name={category._id}
                 label={category.name}
-                checked={category.selected}
+                checked={categories[index].selected}
+                onChange={() => handleCheckBoxChange(index)}
               /> 
-          )
+            )
           }
         </form>
-        <Button action={() => {}}> Filtrar </Button>
       </S.Filter>
       <S.Products>
         { products.map(product => {

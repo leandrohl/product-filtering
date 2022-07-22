@@ -14,6 +14,6 @@ export interface ICategory {
 export interface IImage {
   alt: string;
   asset: {
-    url: string;
+    url: string
   };
 }
