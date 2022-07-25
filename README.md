@@ -1,8 +1,7 @@
 <h1 align="center">
   Listagem de Produtos
 </h1>
-
-<br />
+<p>Projeto de listagem de produtos com filtro por categoria.</p>
 
 ## IMPORTANTE:
 Baixe todas as dependências utilizadas antes da execução da aplicação
