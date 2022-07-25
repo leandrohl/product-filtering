@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../../components/Card';
+import Product from '../../components/Product';
 import Checkbox from '../../components/Checkbox';
 import data from '../../services/products.json'
 import { IProduct } from '../../services/types';
@@ -7,7 +7,7 @@ import { IProduct } from '../../services/types';
 import * as S from './styles';
 import { Category } from './types';
 
-const Home: React.FC = () => {
+const Products: React.FC = () => {
   const [products, setProducts] = useState<IProduct[]>([])
   const [categories, setCategories] = useState<Category[]>([])
 
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
     }
   }
 
-  const handleCheckBoxChange = (position: number) => {
+  const handleCategoryFilter = (position: number) => {
     const updatedCategories = categories.map((category, index) => {
         if (index === position) category.selected = !category.selected
         return category
@@ -62,37 +62,37 @@ const Home: React.FC = () => {
     <S.Container>
       <S.Filter>
         <h2> Categorias </h2>
-        <form>
-          { categories.map((category, index) => 
-              <Checkbox 
-                key={category._id}
-                name={category._id}
-                label={category.name}
-                checked={categories[index].selected}
-                onChange={() => handleCheckBoxChange(index)}
-              /> 
-            )
-          }
-        </form>
-      </S.Filter>
-      <S.Products>
-        { products.map(product => {
-            const { id, name, category, images, shortDescription} = product
-            return (
-              <Card
-                key={id}
-                title={name}
-                image={images[0]}
-                category={category}
-                subTitle={shortDescription}
-              />
-            )
-          })
+        { categories.map((category, index) => 
+            <Checkbox 
+              key={category._id}
+              name={category._id}
+              label={category.name}
+              checked={categories[index].selected}
+              onChange={() => handleCategoryFilter(index)}
+            /> 
+          )
         }
-      </S.Products>
-      
+      </S.Filter>
+      <S.ContainerProducts>
+        <h2> Produtos </h2>
+        <S.Products>
+          { products.map(product => {
+              const { id, name, category, images, shortDescription} = product
+              return (
+                <Product
+                  key={id}
+                  title={name}
+                  image={images[0]}
+                  category={category}
+                  subTitle={shortDescription}
+                />
+              )
+            })
+          }
+        </S.Products>
+      </S.ContainerProducts>
     </S.Container>
   );
 }
 
-export default Home;
+export default Products;

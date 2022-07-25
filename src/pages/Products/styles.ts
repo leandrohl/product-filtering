@@ -6,36 +6,36 @@ export const Container = styled.main`
 
   padding: 28px;
 
-  @media (max-width: 600px) {
+  h2 {
+    font-weight: 600;
+    color: ${props => props.theme.primary};
+    padding-bottom: 8px;
+  }
+
+  @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
   }
 `
 
-export const Filter = styled.nav`
+export const Filter = styled.form`
   margin-bottom: 16px;
 
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 25%;
 
-  > h2 {
-    font-weight: 600;
-    color: ${props => props.theme.primary}
-  }
-
-  > form {
-    padding: 16px 0;
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 80%;
   }
 `
 
+export const ContainerProducts = styled.div`
+  width: 75%;
+`
+
 export const Products = styled.section`
   display: flex;
-  justify-content: center;
-  width: 85%;
   flex-wrap: wrap;
 `
+

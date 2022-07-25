@@ -11,7 +11,7 @@ interface ICardProps {
   action?: () => void;
 }
 
-const Card: React.FC<ICardProps> = (props: ICardProps) =>  {
+const Product: React.FC<ICardProps> = (props: ICardProps) =>  {
   const { title, image, action, subTitle, category } = props
   return (
     <S.Card onClick={action}>
@@ -28,4 +28,4 @@ const Card: React.FC<ICardProps> = (props: ICardProps) =>  {
   );
 }
 
-export default Card;
+export default Product;
