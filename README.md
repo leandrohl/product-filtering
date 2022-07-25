@@ -2,8 +2,6 @@
   Listagem de Produtos
 </h1>
 
-
-<br />
 <br />
 
 ## IMPORTANTE:
