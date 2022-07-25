@@ -26,12 +26,16 @@ export const Filter = styled.form`
   width: 25%;
 
   @media (max-width: 800px) {
-    width: 80%;
+    width: 100%;
   }
 `
 
 export const ContainerProducts = styled.div`
   width: 75%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 
 export const Products = styled.section`

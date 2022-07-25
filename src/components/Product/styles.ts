@@ -22,6 +22,7 @@ export const Card = styled.section(({ theme }) => `
     flex-direction: column;
     padding: 10px;
     font-size: 16px;
+    
     > p {
       font-size: 14px;
     }
