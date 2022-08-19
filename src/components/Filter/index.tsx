@@ -33,7 +33,7 @@ const Filter: React.FC<IFilterProps> = (props: IFilterProps) => {
           Filtrar
         </S.Button>
         <S.Button onClick={clearFilter}>
-          Limpar filtro
+          Filtro limpio
         </S.Button>
         <Modal 
           title={filterTitle}
