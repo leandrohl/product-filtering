@@ -11,10 +11,6 @@ interface IFilterProps {
 }
 
 const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected }: IFilterProps) => {  
-  // const handleCategoryFilter = (category: ICategory) => {
-
-  // }
-
   return (
     <S.Container>
       <h2> Categorias </h2>
