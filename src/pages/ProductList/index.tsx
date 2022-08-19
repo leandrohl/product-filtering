@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Product from '../../components/Product';
-import { ICategory, IProduct } from '../../products/types';
+import { ICategory, IProduct } from '../../data/types';
 
 import * as S from './styles';
 import Filter from '../../components/Filter';

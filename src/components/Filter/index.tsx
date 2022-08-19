@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useMobile from '../../hooks/useMobile';
-import { ICategory } from '../../products/types';
+import { ICategory } from '../../data/types';
 import Checkbox from '../Checkbox';
 import Modal from '../Modal';
 
