@@ -8,8 +8,9 @@ export const Container = styled.label`
   display: flex;
   align-items: center;
   padding: 4px 0;
+  cursor: pointer;
 
-  > span {
+  > label {
     margin-left: 12px;
     white-space: nowrap;
   }

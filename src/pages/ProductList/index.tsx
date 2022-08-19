@@ -14,11 +14,11 @@ function ProductList({ products, categories }: IProductListProps) {
   const [categoriesSelectedId, setCategoriesSelectedId] = useState<string[]>([])
 
   const productsFiltered = categoriesSelectedId.length > 0 ? 
-    products.filter(product => categoriesSelectedId.find(categoryId => categoryId === product.category._id))
+    products.filter(product => categoriesSelectedId.includes(product.category._id))
     : []
 
   const handleCategoriesSelected = (categoryId: string) => {
-    const isCategorySelected = categoriesSelectedId.find(id => id === categoryId)
+    const isCategorySelected = categoriesSelectedId.includes(categoryId)
 
     if (isCategorySelected) {
       setCategoriesSelectedId(categoriesSelectedId.filter(id => id !== categoryId))

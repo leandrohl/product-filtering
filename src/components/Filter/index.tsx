@@ -46,7 +46,7 @@ const Filter: React.FC<IFilterProps> = (props: IFilterProps) => {
                 key={category._id}
                 name={category._id}
                 label={category.name}
-                checked={!!categoriesSelected.find(id => id === category._id)}
+                checked={categoriesSelected.includes(category._id)}
                 onChange={() => handleCategoriesSelected(category._id)}
               /> 
               )
@@ -62,7 +62,7 @@ const Filter: React.FC<IFilterProps> = (props: IFilterProps) => {
           key={category._id}
           name={category._id}
           label={category.name}
-          checked={!!categoriesSelected.find(id => id === category._id)}
+          checked={!!categoriesSelected.includes(category._id)}
           onChange={() => handleCategoriesSelected(category._id)}
         /> 
         )

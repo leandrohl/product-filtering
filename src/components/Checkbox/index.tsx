@@ -10,12 +10,13 @@ const Checkbox: React.FC<ICheckBoxProps> = (props: ICheckBoxProps) => {
   const { label, name, checked, onChange } = props
   return <S.Container>
     <input 
-      type='checkbox'  
+      type='checkbox' 
+      id={name} 
       name={name}
       checked={checked}
       onChange={onChange}
     /> 
-    <span>{label}</span>
+    <label htmlFor={name}>{label}</label>
   </S.Container>;
 }
 
