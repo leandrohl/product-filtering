@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 export const Card = styled.section(({ theme }) => `
-  display: flex;
-  align-items: center;
-  
+  display: flex;  
 
   border: 1px solid ${theme.gray2};
   box-shadow: ${theme.shadow};
@@ -22,27 +20,32 @@ export const Card = styled.section(({ theme }) => `
     flex-direction: column;
     padding: 10px;
     font-size: 16px;
-    
-    > p {
-      font-size: 14px;
-      font-weight: bold;
-    }
+    align-items: center;
   }
   
 `);
 
 export const Image = styled.img`
-  width: 160px;
+  max-width: 160px;
   object-fit: cover;
+
+  @media (max-width: 800px) {
+    max-width: 300px;
+  }
 `
 
 export const Content = styled.div`
-  width: 200px;
+  max-width: 200px;
   padding-left: 16px; 
+
+  span  {
+    font-size: 14px;
+    font-weight: 600;
+  }
 `
 
 export const Title = styled.h2`
-  font-weight: 500px;
+  font-weight: bold;
   font-size: 16px;
   margin-bottom: 12px;
 `

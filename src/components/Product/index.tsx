@@ -18,7 +18,7 @@ function Product(props: ICardProps){
       <S.Image src={image.asset.url} alt={image.alt} />
       <S.Content>
         <S.Title>{title}</S.Title>
-        <p> {subTitle} </p>
+        <span> {subTitle} </span>
         <S.ContainerCategory>
           {category.name}
         </S.ContainerCategory>

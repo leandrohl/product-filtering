@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useMobile from '../../hooks/useMobile';
 import { ICategory } from '../../Products/types';
 import Checkbox from '../Checkbox';
 import Modal from '../Modal';
@@ -14,11 +15,11 @@ interface IFilterProps {
 
 const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected, clearFilter }: IFilterProps) => {  
   const [openModalFilter, setOpenModalFilter] = useState(false)
+  const { isMobile } = useMobile()
 
-  const detectMob = () => window.innerWidth <= 800
   const filterTitle = 'Categorías'
 
-  return detectMob()
+  return isMobile
   ? (
       <S.ContainerMobile>
         <S.Button onClick={() => setOpenModalFilter(true)}>
