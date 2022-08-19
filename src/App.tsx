@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Products from './pages/Products';
+import Products from './pages/ProductList';
 import GlobalStyle from './styles/global';
 import Theme from './styles/theme';
 

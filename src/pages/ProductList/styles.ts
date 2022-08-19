@@ -18,7 +18,7 @@ export const Container = styled.main`
   }
 `
 
-export const Filter = styled.form`
+export const ContainerFilter = styled.form`
   margin-bottom: 16px;
 
   display: flex;

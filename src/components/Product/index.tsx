@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICategory, IImage } from '../../services/types';
+import { ICategory, IImage } from '../../Products/types';
 
 import * as S from './styles';
 
