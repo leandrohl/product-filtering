@@ -19,9 +19,9 @@ function Product(props: ICardProps){
       <S.Content>
         <S.Title>{title}</S.Title>
         <p> {subTitle} </p>
-        <S.Category>
+        <S.ContainerCategory>
           {category.name}
-        </S.Category>
+        </S.ContainerCategory>
       </S.Content>
     </S.Card>
   );

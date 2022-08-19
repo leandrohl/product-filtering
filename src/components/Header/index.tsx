@@ -1,12 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import * as S from './styles';
+import TBBLogo from '../../assets/brooklyn-brothers-logo.png'
 
 const Header: React.FC = () => {
   return (
-    <nav>
-      
-    </nav>
+    <S.Container>
+      <img src={TBBLogo} alt="logo-tbb" />
+    </S.Container>
   );
 }
 

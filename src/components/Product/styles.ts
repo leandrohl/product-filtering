@@ -47,7 +47,7 @@ export const Title = styled.h2`
   margin-bottom: 12px;
 `
 
-export const Category = styled.div(({ theme }) => `
+export const ContainerCategory = styled.div(({ theme }) => `
   background: ${theme.primary};
   color: ${theme.white};
 

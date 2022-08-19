@@ -5,6 +5,7 @@ import GlobalStyle from './styles/global';
 import Theme from './styles/theme';
 import { products } from './Products/data';
 import { ICategory } from './Products/types';
+import Header from './components/Header';
 
 const App: React.FC = () => {
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={Theme}>
+      <Header />
       <ProductList products={products.data.nodes} categories={categoriesFilter}/>
       <GlobalStyle />
     </ThemeProvider>

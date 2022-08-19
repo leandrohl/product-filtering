@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ICategory } from '../../Products/types';
 import Checkbox from '../Checkbox';
 
