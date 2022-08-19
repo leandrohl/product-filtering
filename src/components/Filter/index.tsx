@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useMobile from '../../hooks/useMobile';
-import { ICategory } from '../../Products/types';
+import { ICategory } from '../../products/types';
 import Checkbox from '../Checkbox';
 import Modal from '../Modal';
 
@@ -13,7 +13,14 @@ interface IFilterProps {
   clearFilter: () => void
 }
 
-const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected, clearFilter }: IFilterProps) => {  
+const Filter: React.FC<IFilterProps> = (props: IFilterProps) => {  
+  const {
+    categories,
+    categoriesSelected,
+    clearFilter,
+    handleCategoriesSelected
+  } = props
+  
   const [openModalFilter, setOpenModalFilter] = useState(false)
   const { isMobile } = useMobile()
 

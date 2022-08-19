@@ -5,42 +5,45 @@ export const Card = styled.section(({ theme }) => `
 
   border: 1px solid ${theme.gray2};
   box-shadow: ${theme.shadow};
-  padding: 20px 10px;
+
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
-  margin: 10px;
+
+  padding: 20px 12px;
 
   &:hover {
     box-shadow: ${theme.shadow3};
   }
 
-  @media (max-width: 800px) {
-    width: 100%;
-    flex-direction: column;
-    padding: 10px;
-    font-size: 16px;
+  @media (max-width: 1000px) {
     align-items: center;
+    flex-direction: column;
   }
-  
 `);
 
 export const Image = styled.img`
-  max-width: 160px;
+  max-width: 140px;
   object-fit: cover;
 
   @media (max-width: 800px) {
-    max-width: 300px;
+    max-width: 200px
   }
 `
 
 export const Content = styled.div`
-  max-width: 200px;
   padding-left: 16px; 
 
   span  {
     font-size: 14px;
     font-weight: 600;
+  }
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `
 

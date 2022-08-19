@@ -16,6 +16,7 @@ export const ContainerMobile = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0px 16px;
 `
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Product from '../../components/Product';
-import { ICategory, IProduct } from '../../Products/types';
+import { ICategory, IProduct } from '../../products/types';
 
 import * as S from './styles';
 import Filter from '../../components/Filter';
@@ -41,7 +41,7 @@ function ProductList({ products, categories }: IProductListProps) {
         clearFilter={clearFilter}
       />
       <S.ContainerProducts>
-        <h2> Productos </h2>
+        <h1> Productos </h1>
         <S.Products>
           {
             productsFiltered.length > 0
