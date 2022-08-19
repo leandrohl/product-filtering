@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 import * as S from './styles';
 
 interface IModalProps {
@@ -16,7 +18,7 @@ function Modal ({ children, closeModal, title, open }: IModalProps) {
         <S.Header>
           <h3>{title}</h3>
           {closeModal && (
-            <span aria-label="fechar modal" onClick={() => closeModal()}> X </span>
+            <AiOutlineClose aria-label="fechar modal" onClick={() => closeModal()} />
           )}
         </S.Header>
         {children}
