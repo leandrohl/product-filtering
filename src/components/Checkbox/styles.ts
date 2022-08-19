@@ -11,6 +11,7 @@ export const Container = styled.label`
 
   > span {
     margin-left: 12px;
+    white-space: nowrap;
   }
 
   input[type="checkbox"] {

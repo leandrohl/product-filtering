@@ -26,19 +26,22 @@ function ProductList({ products, categories }: IProductListProps) {
       setCategoriesSelectedId([ ...categoriesSelectedId, categoryId])
     }
   }
+
+  const clearFilter = () => {
+    setCategoriesSelectedId([])
+  }
     
 
   return (
     <S.Container>
-      <S.ContainerFilter>
-        <Filter 
-          categories={categories}
-          categoriesSelected={categoriesSelectedId}
-          handleCategoriesSelected={handleCategoriesSelected}
-        />
-      </S.ContainerFilter>
+      <Filter 
+        categories={categories}
+        categoriesSelected={categoriesSelectedId}
+        handleCategoriesSelected={handleCategoriesSelected}
+        clearFilter={clearFilter}
+      />
       <S.ContainerProducts>
-        <h2> Produtos </h2>
+        <h2> Productos </h2>
         <S.Products>
           {
             productsFiltered.length > 0

@@ -4,13 +4,7 @@ export const Container = styled.main`
   display: flex;
   width: 100%;
 
-  padding: 28px;
-
-  h2 {
-    font-weight: 600;
-    color: ${props => props.theme.primary};
-    padding-bottom: 8px;
-  }
+  padding: 20px;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -18,23 +12,20 @@ export const Container = styled.main`
   }
 `
 
-export const ContainerFilter = styled.form`
-  margin-bottom: 16px;
-
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-
-  @media (max-width: 800px) {
-    width: 100%;
-  }
-`
-
 export const ContainerProducts = styled.section`
-  width: 75%;
+  margin-left: 40px;
+
+  > h2 {
+    text-align: center;
+    font-weight: bold;
+    color: ${props => props.theme.primary};
+    margin-bottom: 8px;
+  }
+
 
   @media (max-width: 800px) {
     width: 100%;
+    margin-left: 0;
   }
 `
 

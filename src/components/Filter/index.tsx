@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ICategory } from '../../Products/types';
 import Checkbox from '../Checkbox';
+import Modal from '../Modal';
 
 import * as S from './styles';
 
@@ -8,12 +9,46 @@ interface IFilterProps {
   categories: ICategory[]
   categoriesSelected: string[]
   handleCategoriesSelected: (id: string) => void
+  clearFilter: () => void
 }
 
-const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected }: IFilterProps) => {  
-  return (
-    <S.Container>
-      <h2> Categorias </h2>
+const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected, clearFilter }: IFilterProps) => {  
+  const [openModalFilter, setOpenModalFilter] = useState(false)
+
+  const detectMob = () => window.innerWidth <= 800
+  const filterTitle = 'Categorías'
+
+  return detectMob()
+  ? (
+      <S.ContainerMobile>
+        <S.Button onClick={() => setOpenModalFilter(true)}>
+          Filtrar
+        </S.Button>
+        <S.Button onClick={clearFilter}>
+          Limpar filtro
+        </S.Button>
+        <Modal 
+          title={filterTitle}
+          open={openModalFilter}
+          closeModal={() => setOpenModalFilter(false)}
+        >
+          <S.ContainerFilter>
+            {categories.map((category) => 
+              <Checkbox 
+                key={category._id}
+                name={category._id}
+                label={category.name}
+                checked={!!categoriesSelected.find(id => id === category._id)}
+                onChange={() => handleCategoriesSelected(category._id)}
+              /> 
+              )
+            }
+          </S.ContainerFilter>
+        </Modal>
+      </S.ContainerMobile>
+  ) : (
+    <S.ContainerFilter>
+      <h2> {filterTitle} </h2>
       {categories.map((category) => 
         <Checkbox 
           key={category._id}
@@ -24,9 +59,8 @@ const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handle
         /> 
         )
       }
-    </S.Container>
-        
-  );
+    </S.ContainerFilter>
+  )
 }
 
 export default Filter;

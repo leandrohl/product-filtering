@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "brooklyn-brothers-logo.png",
+      "src": "tbb-logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

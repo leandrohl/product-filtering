@@ -25,20 +25,20 @@ export const Card = styled.section(({ theme }) => `
     
     > p {
       font-size: 14px;
+      font-weight: bold;
     }
   }
   
 `);
 
 export const Image = styled.img`
-  width: 200px;
+  width: 160px;
   object-fit: cover;
 `
 
 export const Content = styled.div`
-  max-width: 260px;
+  width: 200px;
   padding-left: 16px; 
-  
 `
 
 export const Title = styled.h2`
@@ -57,6 +57,5 @@ export const ContainerCategory = styled.div(({ theme }) => `
   padding: 4px 16px;
   border-radius: 16px;
   font-size: 14px;
-
 
 `);
