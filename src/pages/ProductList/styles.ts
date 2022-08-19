@@ -30,7 +30,7 @@ export const ContainerFilter = styled.form`
   }
 `
 
-export const ContainerProducts = styled.div`
+export const ContainerProducts = styled.section`
   width: 75%;
 
   @media (max-width: 800px) {

@@ -1,4 +1,4 @@
 import styled from 'styled-components'
 
-export const Card = styled.section`
+export const Container = styled.section`
 `

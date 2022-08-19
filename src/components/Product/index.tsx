@@ -11,12 +11,11 @@ interface ICardProps {
   action?: () => void;
 }
 
-const Product: React.FC<ICardProps> = (props: ICardProps) =>  {
+function Product(props: ICardProps){
   const { title, image, action, subTitle, category } = props
   return (
     <S.Card onClick={action}>
-      <S.Image src={image.asset.url} alt={image.alt}>
-      </S.Image>
+      <S.Image src={image.asset.url} alt={image.alt} />
       <S.Content>
         <S.Title>{title}</S.Title>
         <p> {subTitle} </p>
