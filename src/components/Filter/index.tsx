@@ -6,25 +6,25 @@ import * as S from './styles';
 
 interface IFilterProps {
   categories: ICategory[]
+  categoriesSelected: string[]
+  handleCategoriesSelected: (id: string) => void
 }
 
-const Filter: React.FC<IFilterProps> = ({ categories }: IFilterProps) => {
-  const [categoriesSelected, setCategoriesSelected] = useState<ICategory[]>([])
-  
-  const handleCategoryFilter = (id: string) => {
+const Filter: React.FC<IFilterProps> = ({ categories, categoriesSelected, handleCategoriesSelected }: IFilterProps) => {  
+  // const handleCategoryFilter = (category: ICategory) => {
 
-  }
+  // }
 
   return (
     <S.Container>
       <h2> Categorias </h2>
-      {categories.map((category, index) => 
+      {categories.map((category) => 
         <Checkbox 
           key={category._id}
           name={category._id}
           label={category.name}
-          checked={true}
-          onChange={() => handleCategoryFilter(category._id)}
+          checked={!!categoriesSelected.find(id => id === category._id)}
+          onChange={() => handleCategoriesSelected(category._id)}
         /> 
         )
       }

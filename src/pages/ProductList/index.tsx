@@ -11,12 +11,21 @@ interface IProductListProps {
 }
 
 function ProductList({ products, categories }: IProductListProps) {
-  const [categoriesSelected, setCategoriesSelected] = useState<ICategory[]>([])
+  const [categoriesSelectedId, setCategoriesSelectedId] = useState<string[]>([])
 
-  const productsFiltered = categoriesSelected.length > 0 ? 
-    products.filter(product => categoriesSelected.find(category => category._id === product.category._id))
+  const productsFiltered = categoriesSelectedId.length > 0 ? 
+    products.filter(product => categoriesSelectedId.find(categoryId => categoryId === product.category._id))
     : []
 
+  const handleCategoriesSelected = (categoryId: string) => {
+    const isCategorySelected = categoriesSelectedId.find(id => id === categoryId)
+
+    if (isCategorySelected) {
+      setCategoriesSelectedId(categoriesSelectedId.filter(id => id !== categoryId))
+    } else {
+      setCategoriesSelectedId([ ...categoriesSelectedId, categoryId])
+    }
+  }
     
 
   return (
@@ -24,6 +33,8 @@ function ProductList({ products, categories }: IProductListProps) {
       <S.ContainerFilter>
         <Filter 
           categories={categories}
+          categoriesSelected={categoriesSelectedId}
+          handleCategoriesSelected={handleCategoriesSelected}
         />
       </S.ContainerFilter>
       <S.ContainerProducts>
