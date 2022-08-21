@@ -13,6 +13,8 @@ export const Container = styled.label`
   > label {
     margin-left: 12px;
     white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   input[type="checkbox"] {
