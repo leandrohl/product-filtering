@@ -23,10 +23,8 @@ export const Card = styled.section(({ theme }) => `
 `);
 
 export const Image = styled.img`
-  width: 200px;
-  
-
-  object-fit: cover;
+  width: 140px;
+  height: 140px;
  
 `
 
