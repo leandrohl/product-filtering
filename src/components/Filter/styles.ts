@@ -9,6 +9,10 @@ export const ContainerFilter = styled.div`
     color: ${props => props.theme.primary};
     margin-bottom: 20px;
   }
+
+  > button {
+    margin-top: 24px;
+  }
 `
 
 
@@ -21,13 +25,20 @@ export const ContainerMobile = styled.div`
 
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.primary};
-  color: ${props => props.theme.white};
+  background-color: ${props => props.theme.white};
+  color: ${props => props.theme.primary};
   padding: 8px 16px;
   border-radius: 24px;
   font-size: 16px;
+  font-weight: bold;
 
   margin-bottom: 16px;
+  transition: 0.5s;
+
+  :hover {
+    background-color: ${props => props.theme.primary};
+    color: ${props => props.theme.white};
+  }
 `
 
 

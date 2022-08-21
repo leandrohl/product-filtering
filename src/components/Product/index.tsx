@@ -7,15 +7,21 @@ interface ICardProps {
   title: string;
   subTitle: string;
   category: ICategory;
-  image: IImage;
+  images: IImage[];
   action?: () => void;
 }
 
 function Product(props: ICardProps){
-  const { title, image, action, subTitle, category } = props
+  const { title, images, action, subTitle, category } = props
   return (
     <S.Card onClick={action}>
-      <S.Image src={image.asset.url} alt={image.alt} />
+      { images.map((image, index) => (
+          <S.Image
+          key={index}
+          src={image.asset.url} 
+          alt={image.alt} />
+        ))
+      }
       <S.Content>
         <S.Title>{title}</S.Title>
         <span> {subTitle} </span>

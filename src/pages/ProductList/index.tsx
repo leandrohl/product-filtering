@@ -51,7 +51,7 @@ function ProductList({ products, categories }: IProductListProps) {
                 <Product
                   key={product.id}
                   title={product.name}
-                  image={product.images[0]}
+                  images={product.images}
                   category={product.category}
                   subTitle={product.shortDescription}
                 />
@@ -63,7 +63,7 @@ function ProductList({ products, categories }: IProductListProps) {
                 <Product
                   key={product.id}
                   title={product.name}
-                  image={product.images[0]}
+                  images={product.images}
                   category={product.category}
                   subTitle={product.shortDescription}
                 />

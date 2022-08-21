@@ -23,12 +23,9 @@ export const Card = styled.section(({ theme }) => `
 `);
 
 export const Image = styled.img`
-  max-width: 140px;
-  object-fit: cover;
-
-  @media (max-width: 800px) {
-    max-width: 200px
-  }
+  width: 200px;
+  height: 200px;
+ 
 `
 
 export const Content = styled.div`

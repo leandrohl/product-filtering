@@ -67,6 +67,9 @@ const Filter: React.FC<IFilterProps> = (props: IFilterProps) => {
         /> 
         )
       }
+      <S.Button onClick={clearFilter}>
+        Filtro limpio
+      </S.Button>
     </S.ContainerFilter>
   )
 }
